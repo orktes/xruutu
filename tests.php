@@ -11,8 +11,8 @@ $vastaus = $ruutu->search("maria");
 
 foreach($vastaus->video_episode as $video) {
 //print_r($video);
-
-echo $video->title ." - ". $ruutu->getVideoUrl($video->nid, "video_episode")."<br />";
+$url=$ruutu->getVideoUrl($video->nid, "video_episode");
+echo "<a href=\"http://10.1.1.36:8888/?r=".$url."\">". $video->title."</a><br />";
 
 
 
