@@ -37,7 +37,7 @@ class Ruutu {
 		return $this->cookie_file;
 	}
 	
-	function search($term) {
+	function search($term, $video=true, $video_episode=true, $audio=true) {
 		$loadUrl=$this->serviceUrl."search/search_new.php?params={%22search%22%3A%22".urlencode($term)."%22%2C%22groups%22%3A{%22video%22%3A{%22types%22%3A[%22video_clip%22]}%2C%22video_episode%22%3A{%22types%22%3A[%22video_episode%22]}%2C%22audio%22%3A{%22types%22%3A[%22audio%22]}}}";
 		$data=$this->get($loadUrl);
 		
