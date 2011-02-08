@@ -23,6 +23,7 @@ define( 'parentFile' , 1 );
 
 require_once('includes/variables.inc');
 
+$ruutu=null;
 
 
 $option="mainmenu";
@@ -48,7 +49,7 @@ if(file_exists($XRUUTUDIR.'components/'.$option.'/layout/default.php')
 
 	//luodaan model
 	$modelclassname = $option."XRuutuModel";
-	$model = new $modelclassname($elisaviihde);
+	$model = new $modelclassname($ruutu);
 
 	//luodaan view
 	$viewclassname = $option."XRuutuView";
