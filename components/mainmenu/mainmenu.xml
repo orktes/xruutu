@@ -2,7 +2,7 @@
 <items>
 	<item>
 		<name>Uutuudet</name>
-		<component>newest</component>
+		<component>browse</component>
 		<image></image>
 		<imageover></imageover>
 	</item>
@@ -25,6 +25,6 @@
 		<imageover></imageover>
 	</item>	
 
-
+ 
 </items>
 

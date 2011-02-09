@@ -20,12 +20,12 @@ require_once($XRUUTUDIR.'libs/mvc/m.php');
 class MainMenuXRuutuModel extends XRuutuModel {
 	function getMenuItems() {
 		
-		global $XEEDIR;
+		global $XRUUTUDIR;
 		
 		$menuitems = array();
 		
 		$mainmenudoc = new DOMDocument();
-		$mainmenudoc->load( $XEEDIR."components/mainmenu/mainmenu.xml" );
+		$mainmenudoc->load( $XRUUTUDIR."components/mainmenu/mainmenu.xml" );
 		$xmlItems = $mainmenudoc->getElementsByTagName( "item" );
 		
 		foreach ($xmlItems AS $item) {

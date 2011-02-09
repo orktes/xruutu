@@ -39,5 +39,5 @@ return $result;
 	
 }
 $XRUUTUURL = curPageDirURL();
-$XRUUTUIR = getcwd()."/";	
+$XRUUTUDIR = getcwd()."/";	
 

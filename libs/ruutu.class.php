@@ -36,8 +36,9 @@ class Ruutu {
 	function getCookieFile($cookieFile) {
 		return $this->cookie_file;
 	}
-	function getMedia($type, $series="all") {
-		$loadUrl=$this->serviceUrl."ajax/media_get_nettitv_media/".$series."/".$type."/__/latestdesc/0/8/true/__/__/__";
+	function getMedia($type, $series="__") {
+		$loadUrl=$this->serviceUrl."ajax/media_get_nettitv_media/all/".$type."/".urlencode($series)."/latestdesc/0/8/true/__/__/__";
+	
 		$data=$this->get($loadUrl);		
 		return json_decode($data);
 	}

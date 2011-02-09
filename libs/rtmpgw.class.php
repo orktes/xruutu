@@ -21,8 +21,8 @@ public static function stop() {
 	system('killall -9 rtmpgw');
 }
 
-public static  start() {
-	exec("./rtmpgw -q >/dev/null 2>&1 &");
+public static  start($port) {
+	exec("./rtmpgw -g 777 -q >/dev/null 2>&1 &");
 }
 	
 	

@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 
 /* Copyright Jaakko Lukkari 2011 
@@ -21,9 +23,12 @@
 define( 'parentFile' , 1 );
 
 
+require_once('includes/functions.inc');
 require_once('includes/variables.inc');
+require_once('libs/ruutu.class.php');
 
-$ruutu=null;
+
+$ruutu=new Ruutu();
 
 
 $option="mainmenu";

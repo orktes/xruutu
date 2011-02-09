@@ -18,7 +18,7 @@
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
 
-global $XEEDIR, $XEEURL;
+global $XRUUTUDIR, $XRUUTUURL;
 
 header("Content-Type: application/rss+xml");
 echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
@@ -46,10 +46,10 @@ $i++;
 ?>
 <item>
 <title><?php echo $item->name; ?></title>
-<link><?php echo $XEEURL; ?>index.php?option=<?php echo $item->component; ?></link>                    
+<link><?php echo $XRUUTUURL; ?>index.php?option=<?php echo $item->component; ?></link>                    
 <media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?>" />    
-<image><?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?></image>    
-<imageover><?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->imageover; ?></imageover> 
+<image><?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->image; ?></image>    
+<imageover><?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->imageover; ?></imageover> 
 <itemid><?php echo $i; ?></itemid>
 </item>
 <?php } ?>
