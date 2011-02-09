@@ -25,35 +25,10 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 ?>
 <rss version="2.0"  xmlns:media="http://purl.org/dc/elements/1.1/"  xmlns:dc="http://purl.org/dc/elements/1.1/">
 
-<onEnter>	
-	/* start rtmpgw */
-	ret = getURL("");
-</onEnter>
-
-<onExit>
-	/* stop rtmpgw */
-	ret = getURL("");
-</onExit>
-
-
-
 <channel>
 <title></title>
-<?php 
-$i=0;
-foreach($this->menuitems as $item) {
-$i++;
-?>
-<item>
-<title><?php echo $item->name; ?></title>
-<link><?php echo $XRUUTUURL; ?>index.php?option=<?php echo $item->component; ?></link>                    
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?>" />    
-<image><?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->image; ?></image>    
-<imageover><?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->imageover; ?></imageover> 
-<itemid><?php echo $i; ?></itemid>
-</item>
-<?php } ?>
 
+<?php  foreach($this->series as $series) { include($XRUUTUDIR.'components/series/layout/rss.series.php'); } ?>
 
 </channel>
 </rss>
