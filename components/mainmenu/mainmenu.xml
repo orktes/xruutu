@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<item>
+		<name>Uutuudet</name>
+		<component>newest</component>
+		<image></image>
+		<imageover></imageover>
+	</item>
+	<item>
+		<name>Sarjat</name>
+		<component>series</component>
+		<image></image>
+		<imageover></imageover>
+	</item>
+	<item>
+		<name>Haku</name>
+		<component>search</component>
+		<image></image>
+		<imageover></imageover>
+	</item>
+	<item>
+		<name>Päivitä</name>
+		<component>update</component>
+		<image></image>
+		<imageover></imageover>
+	</item>	
+
+
+</items>
+

@@ -36,7 +36,17 @@ class Ruutu {
 	function getCookieFile($cookieFile) {
 		return $this->cookie_file;
 	}
+	function getMedia($type, $series="all") {
+		$loadUrl=$this->serviceUrl."ajax/media_get_nettitv_media/".$series."/".$type."/__/latestdesc/0/8/true/__/__/__";
+		$data=$this->get($loadUrl);		
+		return json_decode($data);
+	}
 	
+	function getSeriesList() {
+		$loadUrl=$this->serviceUrl."ajax/media_get_netti_tv_series_list/all";
+		$data=$this->get($loadUrl);		
+		return json_decode($data);
+	}
 	function search($term, $video=true, $video_episode=true, $audio=true) {
 		$loadUrl=$this->serviceUrl."search/search_new.php?params={%22search%22%3A%22".urlencode($term)."%22%2C%22groups%22%3A{%22video%22%3A{%22types%22%3A[%22video_clip%22]}%2C%22video_episode%22%3A{%22types%22%3A[%22video_episode%22]}%2C%22audio%22%3A{%22types%22%3A[%22audio%22]}}}";
 		$data=$this->get($loadUrl);

@@ -7,14 +7,21 @@ require_once('libs/ruutu.class.php');
 
 $ruutu = new Ruutu();
 
-$vastaus = $ruutu->search("maria");
+//$vastaus = $ruutu->search("maria");
 
-foreach($vastaus->video_episode as $video) {
+//foreach($vastaus->video_episode as $video) {
 //print_r($video);
-$url=$ruutu->getVideoUrl($video->nid, "video_episode");
-echo "<a href=\"http://10.1.1.36:8888/?r=".$url."\">". $video->title."</a><br />";
+//$url=$ruutu->getVideoUrl($video->nid, "video_episode");
+//echo "<a href=\"http://10.1.1.36:8888/?r=".$url."\">". $video->title."</a><br />";
 
 
 
 //echo $ruutu->getRTMPUrl($video->nid);
-}
+//}
+
+//$sarjat=$ruutu->getSeriesList();
+
+//print_r($sarjat);
+
+$jaksot = $ruutu->getMedia("video_episode");
+print_r($jaksot);
