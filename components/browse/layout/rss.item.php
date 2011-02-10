@@ -5,7 +5,7 @@
 <episode><?php echo  $item->program_episode_number; ?></episode>
 <starttime><![CDATA[<?php echo  $item->video_episode_starttime; ?>]]></starttime>
 <duration><![CDATA[<?php echo  $item->video_episode_duration; ?>]]></duration>
-
+<date><?php echo $item->DATE; ?></date>
 <?php  }  
 if($item->media_type=="video_episode"||$item->media_type=="video") {
 ?>

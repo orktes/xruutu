@@ -35,7 +35,8 @@ class MainMenuXRuutuModel extends XRuutuModel {
 			$menuitem->component=$item->getElementsByTagName( "component" )->item(0)->nodeValue;
 			$menuitem->image=$item->getElementsByTagName( "image" )->item(0)->nodeValue;
 			$menuitem->imageover=$item->getElementsByTagName( "imageover" )->item(0)->nodeValue;
-			
+			$menuitem->type=$item->getElementsByTagName( "type" )->item(0)->nodeValue;
+		
 			$menuitems[]=$menuitem;
 			
 		}

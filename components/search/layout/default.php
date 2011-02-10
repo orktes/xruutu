@@ -28,36 +28,8 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 <channel>
 <title></title>
 
-<?php 
-if(isset($_REQUEST['series'])) {
-	$redirect=$XRUUTUURL."index.php?option=browse&amp;series=". $_REQUEST['series']."&amp;end=0";
-} else if($_REQUEST['term']) {
-	$redirect=$XRUUTUURL."index.php?option=search&amp;term=". $_REQUEST['term'];
-} else {
-	$redirect=$XRUUTUURL."index.php?option=mainmenu";
-	
-}
-?>
 
-<item>
-<title>Kaikki mediat</title>
-<link><?php echo $redirect; ?></link>
-</item>
-
-<item>
-<title>Vain jaksot</title>
-<link><?php echo $redirect; ?>&amp;allowVideo=0&amp;allowAudio=0</link>
-</item>
-
-<item>
-<title>Vain klipit</title>
-<link><?php echo $redirect; ?>&amp;allowVideoEpisode=0&amp;allowAudio=0</link>
-</item>
-
-<item>
-<title>Vain äänitteet</title>
-<link><?php echo $redirect; ?>&amp;allowVideoEpisode=0&amp;allowVideo=0</link>
-</item>
+<?php foreach($this->media->items as $item) { include($XRUUTUDIR.'components/search/layout/rss.item.php'); } ?>
 
 </channel>
 </rss>

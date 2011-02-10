@@ -54,7 +54,27 @@ class Ruutu {
 		return json_decode($data);
 	}
 	function search($term, $video=true, $video_episode=true, $audio=true) {
-		$loadUrl=$this->serviceUrl."search/search_new.php?params={%22search%22%3A%22".urlencode($term)."%22%2C%22groups%22%3A{%22video%22%3A{%22types%22%3A[%22video_clip%22]}%2C%22video_episode%22%3A{%22types%22%3A[%22video_episode%22]}%2C%22audio%22%3A{%22types%22%3A[%22audio%22]}}}";
+		
+		$search=new stdClass();
+		$search->search=$term;
+		$search->groups=new stdClass();
+		if($video) {
+			$search->groups->video=new stdClass();
+		$search->groups->video->types=array();	
+		$search->groups->video->types[]="video_clip";
+		}
+	if($video_episode) {
+		$search->groups->video_episode=new stdClass();
+		$search->groups->video_episode->types=array();	
+		$search->groups->video_episode->types[]="video_episode";
+		}
+	if($audio) {
+		$search->groups->audio=new stdClass();
+		$search->groups->audio->types=array();	
+		$search->groups->audio->types[]="audio";
+		}
+		$loadUrl=$this->serviceUrl."search/search_new.php?params=".json_encode($search);
+	//	echo $loadUrl;
 		$data=$this->get($loadUrl);
 		
 		return json_decode($data);

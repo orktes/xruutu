@@ -3,24 +3,28 @@
 	<item>
 		<name>Uutuudet</name>
 		<component>browse</component>
+		<type>normal</type>
 		<image></image>
 		<imageover></imageover>
 	</item>
 	<item>
 		<name>Sarjat</name>
 		<component>series</component>
+		<type>normal</type>
 		<image></image>
 		<imageover></imageover>
 	</item>
 	<item>
 		<name>Haku</name>
-		<component>search</component>
+		<component>categories</component>
+		<type>search</type>
 		<image></image>
 		<imageover></imageover>
 	</item>
 	<item>
 		<name>Päivitä</name>
 		<component>update</component>
+		<type>normal</type>
 		<image></image>
 		<imageover></imageover>
 	</item>	

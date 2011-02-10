@@ -10,10 +10,22 @@ function endsWith($haystack,$needle,$case=true) {
 }
 
 function dateSort($a, $b) {
+	
+	
 	if($a->DATE==$b->DATE) {
 		return 0;
 	}
 	
 	 return (strtotime($a->DATE) > strtotime($b->DATE)) ? -1 : 1;
+	
+}
+function modifiedSort($a, $b) {
+	
+	
+	if($a->modified==$b->modified) {
+		return 0;
+	}
+	
+	 return (strtotime($a->modified) > strtotime($b->modified)) ? -1 : 1;
 	
 }

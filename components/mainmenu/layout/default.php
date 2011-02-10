@@ -46,8 +46,13 @@ $i++;
 ?>
 <item>
 <title><?php echo $item->name; ?></title>
+<?php if($item->type=="normal") { ?>
 <link><?php echo $XRUUTUURL; ?>index.php?option=<?php echo $item->component; ?></link>                    
-<media:thumbnail url="<?php echo $XEEDIR; ?>images/mainmenuicons/<?php echo $item->image; ?>" />    
+<?php } else if($item->type=="search") { ?>
+<link>rss_command://search</link> 
+<search url="<?php echo $XRUUTUURL; ?>index.php?option=<?php echo $item->component; ?>&amp;term=%s" /> 
+<?php } ?>
+<media:thumbnail url="<?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->image; ?>" />    
 <image><?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->image; ?></image>    
 <imageover><?php echo $XRUUTUDIR; ?>images/mainmenuicons/<?php echo $item->imageover; ?></imageover> 
 <itemid><?php echo $i; ?></itemid>
