@@ -30,9 +30,9 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 <?php 
 if(isset($_REQUEST['series'])) {
-	$redirect=$XRUUTUURL."index.php?option=browse&amp;series=". $_REQUEST['series']."&amp;end=0";
+	$redirect=$XRUUTUURL."index.php?option=browse&amp;series=". urlencode($_REQUEST['series'])."&amp;end=0";
 } else if($_REQUEST['term']) {
-	$redirect=$XRUUTUURL."index.php?option=search&amp;term=". $_REQUEST['term'];
+	$redirect=$XRUUTUURL."index.php?option=search&amp;term=". urlencode($_REQUEST['term']);
 } else {
 	$redirect=$XRUUTUURL."index.php?option=mainmenu";
 	
