@@ -1,5 +1,4 @@
 <?php 
-
 /* Copyright Jaakko Lukkari 2011 
  *  
  * This program is free software; you can redistribute it and/or modify 
@@ -17,27 +16,9 @@
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
 defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' ); 
-
-global $XRUUTUDIR, $XRUUTUURL;
-
-header("Content-Type: application/rss+xml");
-echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
-?>
-<rss version="2.0"  xmlns:media="http://purl.org/dc/elements/1.1/"  xmlns:dc="http://purl.org/dc/elements/1.1/">
-
-<channel>
-<title></title>
-<?php 
-
-
-
-?>
-
-
-<?php foreach($this->media->items as $item) { include($XRUUTUDIR.'components/browse/layout/rss.item.php'); } ?>
-
-</channel>
-</rss>
-
-
-
+require_once($XRUUTUDIR.'libs/mvc/c.php');
+class CategoriesXRuutuController extends XRuutuController  {
+	
+	
+	
+}

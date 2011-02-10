@@ -27,14 +27,26 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 <channel>
 <title></title>
-<?php 
 
+<item>
+<title>Kaikki mediat</title>
+<link><?php echo $XRUUTUURL."index.php?option=browse&amp;series=". $_REQUEST['series']."&amp;end=0"; ?></link>
+</item>
 
+<item>
+<title>Vain jaksot</title>
+<link><?php echo $XRUUTUURL."index.php?option=browse&amp;series=". $_REQUEST['series']."&amp;end=0&amp;allowVideo=0&amp;allowAudio=0"; ?></link>
+</item>
 
-?>
+<item>
+<title>Vain klipit</title>
+<link><?php echo $XRUUTUURL."index.php?option=browse&amp;series=". $_REQUEST['series']."&amp;end=0&amp;allowVideoEpisode=0&amp;allowAudio=0"; ?></link>
+</item>
 
-
-<?php foreach($this->media->items as $item) { include($XRUUTUDIR.'components/browse/layout/rss.item.php'); } ?>
+<item>
+<title>Vain äänitteet</title>
+<link><?php echo $XRUUTUURL."index.php?option=browse&amp;series=". $_REQUEST['series']."&amp;end=0&amp;allowVideoEpisode=0&amp;allowVideo=0"; ?></link>
+</item>
 
 </channel>
 </rss>

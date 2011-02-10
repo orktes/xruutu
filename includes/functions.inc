@@ -8,3 +8,12 @@ function endsWith($haystack,$needle,$case=true) {
     if($case){return (strcmp(substr($haystack, strlen($haystack) - strlen($needle)),$needle)===0);}
     return (strcasecmp(substr($haystack, strlen($haystack) - strlen($needle)),$needle)===0);
 }
+
+function dateSort($a, $b) {
+	if($a->DATE==$b->DATE) {
+		return 0;
+	}
+	
+	 return (strtotime($a->DATE) > strtotime($b->DATE)) ? -1 : 1;
+	
+}

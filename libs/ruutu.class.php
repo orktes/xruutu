@@ -36,12 +36,12 @@ class Ruutu {
 	function getCookieFile($cookieFile) {
 		return $this->cookie_file;
 	}
-	function getMedia($type, $series="__") {
+	function getMedia($type, $series="__", $start=0, $end=8) {
 		//http://www.ruutu.fi/ajax/media_get_nettitv_media/all/video/Yksi%2Blensi%2Byli%2BMarin%2Bpes%25C3%25A4n/latestdesc/0/8/true/__/__/__
 		
 		$series=str_replace(" ","%2B",$series);
 		//$series=str_replace("ä","%25C3%25A4",$series);
-		$loadUrl=$this->serviceUrl."ajax/media_get_nettitv_media/all/".$type."/".$series."/latestdesc/0/8/true/__/__/__";
+		$loadUrl=$this->serviceUrl."ajax/media_get_nettitv_media/all/$type/$series/latestdesc/$start/$end/true/__/__/__";
 		
 		//echo $loadUrl;
 		$data=$this->get($loadUrl);		
