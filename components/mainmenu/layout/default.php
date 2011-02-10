@@ -35,6 +35,46 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 	ret = getURL("");
 </onExit>
 
+<mediaDisplay name=threePartsView
+	sideColorLeft="0:0:0"
+        sideLeftWidthPC="18"
+	sideRightWidthPC="10"
+	sideColorRight="0:0:0"
+	headerXPC="14"
+	headerYPC="3"
+	headerWidthPC="95"
+	itemImageXPC="21"
+	itemImageYPC="18"
+	itemXPC="34"
+	itemYPC="18"
+	itemWidthPC="46"
+	menuXPC="5"
+	menuWidthPC="15"
+	capXPC="82"
+	capYPC="17"
+	capHeightPC="10"
+	headerCapXPC="90"
+	headerCapYPC="10"
+	headerCapWidthPC="0"
+        showDefaultInfo=yes
+	backgroundColor="0:0:0"
+	itemBackgroundColor="0:0:0"
+	infoYPC="85"
+	popupXPC="7"
+	popupWidthPC="15"
+	popupBorderColor="0:0:0"
+	idleImageXPC=45
+	idleImageYPC=42
+	idleImageWidthPC=10
+	idleImageHeightPC=16
+  >
+	<idleImage> image/POPUP_LOADING_01.jpg </idleImage>
+        <idleImage> image/POPUP_LOADING_02.jpg </idleImage>
+        <idleImage> image/POPUP_LOADING_03.jpg </idleImage>
+        <idleImage> image/POPUP_LOADING_04.jpg </idleImage>
+        <idleImage> image/POPUP_LOADING_05.jpg </idleImage>
+        <idleImage> image/POPUP_LOADING_06.jpg </idleImage>
+</mediaDisplay>
 
 
 <channel>
