@@ -19,6 +19,26 @@ defined( 'parentFile' ) or die( 'No direct access! Olet väärässä paikassa!' 
 require_once($XRUUTUDIR.'libs/mvc/c.php');
 class SearchXRuutuController extends XRuutuController  {
 	
-	
+	function play() {
+		if(isset($_REQUEST['id'])&&isset($_REQUEST['type'])) {
+			$ruutu=$this->getModel()->getRuutu();
+			
+			$id=$_REQUEST['id'];
+			$type=$_REQUEST['type'];
+			
+			$url= $ruutu->getVideoUrl($id, $type);
+			
+			if(endsWith($url, "mp4")) {
+			
+			header("location: http://".$_SERVER['SERVER_ADDR'].":777/?r=$url");
+			} else {
+			header("location: $url");
+			}
+		} else {
+			echo "Puutteelliset parametrit";
+		}
+		
+		
+	}
 	
 }

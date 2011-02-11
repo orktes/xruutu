@@ -47,16 +47,25 @@ class SearchXRuutuModel extends XRuutuModel {
 	 $items =array();
 		$data=$ruutu->search($term, $allowVideo, $allowVideoEpisode, $allowAudio);
 
-		if($allowVideoEpisode) {
+		if($allowVideoEpisode&&isset($data->video_episode)) {
 			$media->videoEpisodeTotalCount=$data->group_video_episode_total_found;
+			foreach($data->video_episode as $item) {
+				$item->type="video_episode";
+			}
+			
 			$items=array_merge($items,$data->video_episode);
 		}
-		if($allowVideo) {
+		if($allowVideo&&isset($data->video)) {
 		$media->videoTotalCount=$data->group_video_total_found;
-			
+		foreach($data->video as $item) {
+				$item->type="video";
+			}
 			$items=array_merge($items,$data->video);
 		}
-		if($allowAudio) {
+		if($allowAudio&&isset($data->audio)) {
+		foreach($data->audio as $item) {
+				$item->type="audio";
+			}
 				$media->audioTotalCount=$data->group_audio_total_found;
 			$items=array_merge($items,$data->audio);
 		}
