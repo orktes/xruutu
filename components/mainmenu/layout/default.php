@@ -27,12 +27,12 @@ echo  "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
 
 <onEnter>	
 	/* start rtmpgw */
-	ret = getURL("");
+	ret = getURL("<?php echo $XRUUTUURL; ?>index.php?option=rtmpgw&amp;task=start");
 </onEnter>
 
 <onExit>
 	/* stop rtmpgw */
-	ret = getURL("");
+	ret = getURL("<?php echo $XRUUTUURL; ?>index.php?option=rtmpgw&amp;task=stop");
 </onExit>
 
 <mediaDisplay name=threePartsView
