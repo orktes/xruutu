@@ -260,13 +260,26 @@ class Ruutu {
 	}
 	private function getVidId($url) {
 	
-$ch = curl_init($url);
-curl_setopt($ch,CURLOPT_HEADER,true);
-curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION,false);
-$data = curl_exec($ch);
+	
+		$f = 0;
+		$c = 2;
+		$r = NULL;
+		$a = NULL;
+		$cf = $this->cookie_file;
+		$pd = NULL;
 
-return $this->get_string_between($data, "vid=", "Cont");
+		$data = $this->open_page($url,$f,$c,$r,$a,$cf,$pd);
+		if (preg_match("/Location\:/","$data")){
+				$url2 = @explode("Location: ",$data);
+				$url2 = $url2[1];
+				$url2 = @explode("\r",$url2);
+				$url2 = $url2[0];
+		}
+
+		$pieces = @explode("&vid=",$url2);
+	
+return $pieces[1];
+
 		
 	}
 	
